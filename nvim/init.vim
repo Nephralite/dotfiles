@@ -24,6 +24,10 @@ Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 "syntax checker
 Plug 'dense-analysis/ale' 
+"Official Rust Plugin
+Plug 'rust-lang/rust.vim'
+"Toml support
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 call plug#end()
 
 colorscheme dracula
