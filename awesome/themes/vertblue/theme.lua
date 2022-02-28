@@ -10,7 +10,7 @@ local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local home = os.getenv("HOME")
-local theme_path = home .. "/.config/awesome/themes/basic/"
+local theme_path = home .. "/.config/awesome/themes/vertblue/"
 
 
 local theme = {}
