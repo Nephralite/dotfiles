@@ -9,7 +9,7 @@ local home = os.getenv("HOME")
 --beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") 
 --beautiful.init("/home/jade/.config/awesome/themes/basic/mytheme.lua")
-beautiful.init(home .. "/.config/awesome/themes/vertblue/theme.lua")
+beautiful.init(home .. "/.config/awesome/themes/arch_blue/theme.lua")
 if (RC.vars.wallpaper) then
     local wallpaper = RC.vars.wallpaper
     if awful.util.file_readable(wallpaper) then 

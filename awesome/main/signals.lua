@@ -29,28 +29,18 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
--- Round windows
---[[client.connect_signal("manage", function (c)
-    c.shape = function(cr,w,h)
-        gears.shape.rounded_rect(cr,w,h,10)
-    end
-end)--]]
-
-
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
---Hide Bar if not in floating
-client.connect_signal("property::floating", function(c)
-    if c.floating then
+--Dynamic titlebars and rounding
+
+client.connect_signal("tagged",function(c) 
+	if c.floating or c.first_tag.layout.name == "floating" then 
         c:emit_signal("request::titlebars")
-        c.shape = function(cr,w,h)
-            gears.shape.rounded_rect(cr,w,h,10)
-         end 
-    else
+	else 
         awful.titlebar.hide(c, "left")
         c.shape = gears.shape.rectangle
-    end
+	end 
 end)
 
 client.connect_signal("manage", function(c)
@@ -80,4 +70,10 @@ tag.connect_signal("property::layout", function(t)
     end
 end)
 
-
+client.connect_signal("request::geometry", function(c)
+         if client.focus then
+                 if not client.focus.fullscreen then
+                         client.focus.border_width = beautiful.border_width
+                 end
+         end
+ end)

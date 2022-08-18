@@ -85,6 +85,10 @@ awful.screen.connect_for_each_screen(function(s)
 		layout = wibox.layout.align.vertical,
 	},
   }
+    
+  --make a vertical systray
+  s.mysystray = wibox.widget.systray()
+  s.mysystray:set_horizontal(false)
 
   -- Create the wibox
   s.mywibox = awful.wibar({ position = "left", screen = s, width = 28 })
@@ -95,16 +99,14 @@ awful.screen.connect_for_each_screen(function(s)
     { -- Top widgets
       layout = wibox.layout.fixed.vertical,
       s.mytaglist,
-      --s.mypromptbox,
+      --s.mypromptbox, --I don't use this
     },
     --{-- Middle widget
-        s.mytasklist,
-        --direction = "east",
-        --widget = wibox.container.rotate,
+        s.mytasklist, -- tasklist is rewritten
     --},
     { -- Bottom widgets
       layout = wibox.layout.fixed.vertical,
-      wibox.widget.systray(),
+      s.mysystray,
       volume_widget{
             widget_type = 'icon'
         },
@@ -112,7 +114,6 @@ awful.screen.connect_for_each_screen(function(s)
       mykeyboardlayout,
       s.mylayoutbox,
       RC.launcher,
-      --spacer,
       spacing = dpi(1),
     },
   }
