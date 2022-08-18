@@ -36,6 +36,8 @@ function _M.get()
   awful.key({ modkey,           }, "m",
       function (c)
         c.maximized = not c.maximized
+        --c.maximized_vertical = not c.maximized_vertical
+        --c.maximized_horizontal = not c.maximized_horizontal
         c:raise()
       end ,
       {description = "(un)maximize", group = "client"}),

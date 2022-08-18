@@ -10,7 +10,7 @@ local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local home = os.getenv("HOME")
-local theme_path = home .. "/.config/awesome/themes/vertblue/"
+local theme_path = home .. "/.config/awesome/themes/arch_blue/"
 
 
 local theme = {}
@@ -29,17 +29,16 @@ theme.font          = "Iosevka 8"
     ["darkred"] = "#91231c"
 }
 local color = {
-    ["jade"] = "#42564b",
     ["bluegray"] = "#465c69"
 } 
 
-theme.bg_normal     = defaultcolor["darkgrey"]
-theme.bg_focus      = color["bluegray"]
+theme.bg_normal     = defaultcolor["darkgrey"]-- default: greyblack, using darkgrey
+theme.bg_focus      = color["bluegray"] --default: lightgrey
 theme.bg_urgent     = defaultcolor["red"]
-theme.bg_minimize   = defaultcolor["darkgrey"]
+theme.bg_minimize   = defaultcolor["darkgrey"] --
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = defaultcolor["white"]
+theme.fg_normal     = defaultcolor["white"] -- default grey
 theme.fg_focus      = defaultcolor["white"]
 theme.fg_urgent     = defaultcolor["white"]
 theme.fg_minimize   = defaultcolor["white"]
@@ -48,7 +47,7 @@ theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(1)
 theme.border_normal = defaultcolor["black"]
 theme.border_focus  = defaultcolor["lightgrey"]
-theme.border_marked = color["jade"]
+theme.border_marked = color["darkred"]
 
 theme.titlebar_bg_focus = color["bluegray"] 
 -- There are other variable sets
@@ -140,7 +139,9 @@ theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 theme.awesome_icon       = theme_path .. "assets/arch_logo.png"
-theme.awesome_subicon    = theme_path .. "assets/arch_logo.png"
+theme.awesome_subicon    = theme_assets.awesome_icon(
+    theme.menu_height, theme.bg_focus, theme.fg_focus
+)
 return theme
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
