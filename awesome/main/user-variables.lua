@@ -5,7 +5,7 @@ local _M = {
   terminal = "alacritty",
   editor = "nvim",
   -- Default modkey.
-  modkey = "Mod4",
+  modkey = "Mod1",
 
   -- user defined wallpaper
   --wallpaper = home .. "/Pictures/your-wallpaper-here.jpg",

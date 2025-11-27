@@ -69,3 +69,6 @@ awful.rules.rules = main.rules(
 -- {{{ Signals
 require("main.signals")
 require("deco.titlebar")
+
+-- set keyboardlayout
+os.execute("setxkbmap gb")
