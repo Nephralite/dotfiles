@@ -35,7 +35,7 @@ local color = {
 theme.bg_normal     = defaultcolor["darkgrey"]-- default: greyblack, using darkgrey
 theme.bg_focus      = color["bluegray"] --default: lightgrey
 theme.bg_urgent     = defaultcolor["red"]
-theme.bg_minimize   = defaultcolor["darkgrey"] --
+theme.bg_minimize   = defaultcolor["lightgrey"] --color for keybind page crtl, shift and super
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = defaultcolor["white"] -- default grey
@@ -45,7 +45,7 @@ theme.fg_minimize   = defaultcolor["white"]
 
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(1)
-theme.border_normal = defaultcolor["black"]
+theme.border_normal = defaultcolor["darkgrey"]
 theme.border_focus  = defaultcolor["lightgrey"]
 theme.border_marked = color["darkred"]
 
@@ -140,7 +140,7 @@ theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 theme.icon_theme = nil
 theme.awesome_icon       = theme_path .. "assets/arch_logo.png"
 theme.awesome_subicon    = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
+    theme.menu_height, theme.fg_focus, theme.bg_focus
 )
 return theme
 
