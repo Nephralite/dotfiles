@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local home = os.getenv("HOME")
 local theme_path = home .. "/.config/awesome/themes/manjaro_green/"
-
+local common_path = home .. "/.config/awesome/themes/common/"
 
 local theme = {}
 
@@ -67,8 +67,8 @@ theme.titlebar_bg_focus = color["green"]
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(5)
-theme.taglist_squares_sel = theme_path.."assets/tag_sel.png"
-theme.taglist_squares_unsel = theme_path.."assets/tag_unsel.png"
+theme.taglist_squares_sel = common_path.."assets/tag_sel.png"
+theme.taglist_squares_unsel = common_path.."assets/tag_unsel.png"
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -89,11 +89,11 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = theme_path.."assets/titlebar/close_normal.svg"
-theme.titlebar_close_button_focus  = theme_path.."assets/titlebar/close_focus.svg"
+theme.titlebar_close_button_normal = common_path.."assets/titlebar/close_normal.svg"
+theme.titlebar_close_button_focus  = common_path.."assets/titlebar/close_focus.svg"
 
-theme.titlebar_minimize_button_normal = theme_path.."assets/titlebar/minimize_normal.svg"
-theme.titlebar_minimize_button_focus  = theme_path.."assets/titlebar/minimize_focus.svg"
+theme.titlebar_minimize_button_normal = common_path.."assets/titlebar/minimize_normal.svg"
+theme.titlebar_minimize_button_focus  = common_path.."assets/titlebar/minimize_focus.svg"
 
 --theme.titlebar_ontop_button_normal_inactive = themes_path.."default/titlebar/ontop_normal_inactive.png"
 --theme.titlebar_ontop_button_focus_inactive  = themes_path.."default/titlebar/ontop_focus_inactive.png"
@@ -105,15 +105,15 @@ theme.titlebar_minimize_button_focus  = theme_path.."assets/titlebar/minimize_fo
 --theme.titlebar_sticky_button_normal_active = themes_path.."default/titlebar/sticky_normal_active.png"
 --theme.titlebar_sticky_button_focus_active  = themes_path.."default/titlebar/sticky_focus_active.png"
 
-theme.titlebar_floating_button_normal_inactive = theme_path.."assets/titlebar/floating_normal_inactive.svg"
-theme.titlebar_floating_button_focus_inactive  = theme_path.."assets/titlebar/floating_focus_inactive.svg"
-theme.titlebar_floating_button_normal_active = theme_path.."assets/titlebar/floating_normal_active.svg"
-theme.titlebar_floating_button_focus_active  = theme_path.."assets/titlebar/floating_focus_active.svg"
+theme.titlebar_floating_button_normal_inactive = common_path.."assets/titlebar/floating_normal_inactive.svg"
+theme.titlebar_floating_button_focus_inactive  = common_path.."assets/titlebar/floating_focus_inactive.svg"
+theme.titlebar_floating_button_normal_active = common_path.."assets/titlebar/floating_normal_active.svg"
+theme.titlebar_floating_button_focus_active  = common_path.."assets/titlebar/floating_focus_active.svg"
 
-theme.titlebar_maximized_button_normal_inactive = theme_path.."assets/titlebar/maximized_normal_inactive.svg"
-theme.titlebar_maximized_button_focus_inactive  = theme_path.."assets/titlebar/maximized_focus_inactive.svg"
-theme.titlebar_maximized_button_normal_active = theme_path.."assets/titlebar/maximized_normal_active.svg"
-theme.titlebar_maximized_button_focus_active  = theme_path.."assets/titlebar/maximized_focus_active.svg"
+theme.titlebar_maximized_button_normal_inactive = common_path.."assets/titlebar/maximized_normal_inactive.svg"
+theme.titlebar_maximized_button_focus_inactive  = common_path.."assets/titlebar/maximized_focus_inactive.svg"
+theme.titlebar_maximized_button_normal_active = common_path.."assets/titlebar/maximized_normal_active.svg"
+theme.titlebar_maximized_button_focus_active  = common_path.."assets/titlebar/maximized_focus_active.svg"
 
 theme.wallpaper = theme_path.."assets/background.jpg"
 

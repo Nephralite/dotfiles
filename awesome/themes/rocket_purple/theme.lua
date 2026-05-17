@@ -10,12 +10,12 @@ local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local home = os.getenv("HOME")
-local theme_path = home .. "/.config/awesome/themes/pi_red/"
-local common_path = home .. "/.config/awesome/themes/common"
+local theme_path = home .. "/.config/awesome/themes/rocket_purple/"
+local common_path = home .. "/.config/awesome/themes/common/"
 
 local theme = {}
 
---dofile(themes_path .. "colors.lua")
+--dofile(themes_path .. "colors.Llua")
 theme.font          = "Iosevka 8"
 
  local defaultcolor = {
@@ -29,46 +29,32 @@ theme.font          = "Iosevka 8"
     ["darkred"] = "#91231c"
 }
 local color = {
-    ["redgray"] = "#9b1037",
-    ["hollygreen"] = "#244228",
-    ["edgegray"] = "#1c2024"
+    ["rpurple"] = "#990099"
 } 
 
-theme.bg_normal     = color["edgegray"]-- default: greyblack, using darkgrey
-theme.bg_focus      = color["redgray"] --default: lightgrey
+theme.bg_normal     = defaultcolor["greyblack"]-- default: greyblack, using darkgrey
+theme.bg_focus      = color["rpurple"] --default: lightgrey
 theme.bg_urgent     = defaultcolor["red"]
-theme.bg_minimize   = color["edgegray"] --
+theme.bg_minimize   = defaultcolor["lightgrey"] --
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = defaultcolor["gray"] -- default grey
-theme.fg_focus      = defaultcolor["gray"]
-theme.fg_urgent     = defaultcolor["gray"]
-theme.fg_minimize   = defaultcolor["gray"]
+theme.fg_normal     = defaultcolor["white"] -- default grey
+theme.fg_focus      = defaultcolor["white"]
+theme.fg_urgent     = defaultcolor["white"]
+theme.fg_minimize   = defaultcolor["white"]
 
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(1)
-theme.border_normal = color["edgegray"]
-theme.border_focus  = color["redgray"]
-theme.border_marked = defaultcolor["darkred"]
+theme.border_normal = defaultcolor["black"]
+theme.border_focus  = color["rpurple"]
+theme.border_marked = color["darkred"]
 
-theme.titlebar_bg_focus = color["redgray"] 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- prompt_[fg|bg|fg_cursor|bg_cursor|font]
--- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.titlebar_bg_focus = color["rpurple"] 
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(5)
-theme.taglist_squares_sel = theme_path.."assets/tag_sel.png"
-theme.taglist_squares_unsel = theme_path.."assets/tag_unsel.png"
+theme.taglist_squares_sel = common_path.."assets/tag_sel.png"
+theme.taglist_squares_unsel = common_path.."assets/tag_unsel.png"
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -140,7 +126,7 @@ theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
-theme.awesome_icon       = theme_path .. "assets/pi_logo.png"
+theme.awesome_icon       = theme_path .. "assets/rocket_logo.png"
 theme.awesome_subicon    = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
 )
